@@ -1,4 +1,5 @@
-
+// this function changes background color of element
+// background color is chosen randomly from array
 function getRandomColor() {
     const colorsArray = ["#00ffff", "#FFBCFF", "#f989f6", "#89f9b0", "#ffbb87","#d18eff"];
     const randomNumber = Math.floor(Math.random()*colorsArray.length);
