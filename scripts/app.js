@@ -1,4 +1,3 @@
-
 const apiList = [
     { name: "catoon", category: "ЦРТАНИ ФИЛМОВИ", api: "https://api.jsonbin.io/b/5cbf634e8967d5677997b6e6" },
     { name: "fairyTales", category: "БАЈКЕ", api: "https://api.jsonbin.io/b/5cbf661b1f6d9a5478d01045" },
@@ -8,6 +7,7 @@ const apiList = [
     { name: "countries", category: "ДРЖАВЕ", api: "https://api.jsonbin.io/b/5c97bfd7c13b773c081d406c" }
 ];
 
+//creating category boxes on the first page
 apiList.forEach(apiItem => {
     let categoryContainer = document.createElement("div");
     categoryContainer.classList.add("category","buttons", "flex-center");
@@ -21,6 +21,8 @@ categories.forEach(category => category.addEventListener("click", openGameWindow
 categories.forEach(category => category.addEventListener("mouseenter", getRandomColor));
 categories.forEach(category => category.addEventListener("mouseleave", resetColor));
 
+//this function checks which category is clicked
+// and calls loadgame() function with specific parametar from apiList variable
 function openGameWindow() {
     categories.forEach(category => category.removeEventListener("click", openGameWindow));
     const category = this.id;
