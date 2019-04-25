@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Вешала</title>
+</head>
+<body>
+    <div class="containerWrapper grid-center">
+    <div class="gameContainer">
+        <div class="allCategories grid-center" id="categories">
+            <p class="explanation">ИЗАБЕРИТЕ КАТЕГОРИЈУ</p>
+        </div>
+        <div class="hangmanContainer" id="gameContainer">
+            <div class="categoryNameContainer flex-center" id="categoryName"></div>
+            <div class="hangman flex-center">
+                <canvas id="hangmanCanvas" width="170px" height="200px"></canvas>
+            </div>
+            <div class="wordContainer flex-center" id="game"></div>
+            <div class="alphabetContainer grid-center" id="alphabet"></div>
+        </div>
+    </div>
+    <button id="newGame" class="startNewGame buttons">НОВА ИГРА</button>
+</div>
+    <script src="scripts/buttons.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/canvas.js"></script>
+</body>
+</html>
