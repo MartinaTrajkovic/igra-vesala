@@ -1,0 +1,222 @@
+:root {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerWrapper {
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10fr 3fr;
+    background-image: url("../media/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-size: 100% 100%;
+}
+
+.containerWrapper:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background-image: url("../media/img/rainbow.png");
+    background-repeat: no-repeat;
+    background-size: 65% 100%;
+    background-position-x: 100%;
+}
+
+.gameContainer {
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 10px 15px 20px #518157;
+    background-color: rgb(217, 247, 243, 0.4)
+}
+
+.allCategories {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    text-align: center;
+}
+
+.explanation {
+    grid-column: span 2;
+    color: wheat;
+    font-size: 2em;
+    background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #FFBCFF 57%, #00FF84 100%);
+    font-weight: bold;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.category {
+    font-weight: bold;
+    width: 50%;
+    height: 50%;
+    font-size: 1em;
+    transition: background-color 0.3s linear;
+}
+
+.category:hover {
+    transition: background-color 0.3s linear;
+}
+
+.startNewGame {
+    display: none;
+    height: 60%;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 2;
+    border: 0;
+}
+
+.startNewGame:focus {
+    outline: none;
+}
+
+.hangmanContainer {
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-rows: 2fr 6fr 4fr;
+    grid-template-columns: 3fr 9fr;
+    grid-template-areas: "hangman wrongLetter" "hangman word" "alphabet alphabet"
+}
+
+.wrongGuess {
+    grid-area: wrongLetter;
+}
+
+.hangman {
+    grid-area: hangman;
+}
+
+.wordContainer {
+    grid-area: word;
+}
+
+.wordContainer p {
+    width: 25px;
+    white-space: pre;
+    font-size: 1.7em;
+    text-align: center;
+    color: #02633d;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #f9fc64;
+}
+
+.alphabetContainer {
+    grid-area: alphabet;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(2, 1fr)
+}
+
+.alphabetContainer button {
+    width: 70%;
+    height: 70%;
+    border: none;
+    font-size: 1.2em;
+}
+
+.categoryNameContainer p {
+    font-size: 2em;
+    text-align: center;
+    background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #FFBCFF 57%, #00FF84 100%);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+button:focus {
+    outline: none
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-center {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.buttons {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #f9fc64;
+    box-shadow: 5px 5px 10px rgb(40, 120, 83);
+    color: #008250;
+    transition: background-color 0.3s linear;
+}
+
+@media screen and (max-width:700px) {
+    :root {
+        font-size: 12px
+    }
+    .gameContainer {
+        width: 90%;
+    }
+    .hangmanContainer {
+        grid-template-rows: 4fr 3fr 4fr;
+        grid-template-columns: 5fr 6fr;
+        grid-template-areas: "hangman wrongLetter" "word word" "alphabet alphabet"
+    }
+    .alphabetContainer {
+        grid-area: alphabet;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr)
+    }
+    .containerWrapper:before {
+        background-size: 100% 65%;
+        background-position-y: 100%;
+    }
+    .category {
+        width: 75%;
+    }
+    .wordContainer p {
+        width: 18px;
+    }
+    .alphabetContainer button {
+        border-radius: 5px;
+    }
+    .startNewGame {
+        width: 75%;
+    }
+    canvas {
+        max-width: 100%;
+        margin-top: 5%;
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    :root {
+        font-size: 7px
+    }
+    canvas {
+        max-width: 100%;
+        margin-top: 5%;
+    }
+    .wordContainer p {
+        width: 12px;
+    }
+}
