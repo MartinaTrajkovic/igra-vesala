@@ -1,6 +1,9 @@
 const lettersArray = ["А", "Б", "В", "Г", "Д", "Ђ", "Е", "Ж", "З", "И", "Ј", "К", "Л", "Љ", "М", "Н", "Њ", "О", "П", "Р", "С", "Т", "Ћ", "У", "Ф", "Х", "Ц", "Ч", "Џ", "Ш",];
 const lettersUnicode = [65, 66, 86, 71, 68, 221, 69, 220, 90, 73, 74, 75, 76, 81, 77, 78, 87, 79, 80, 82, 83, 84, 222, 85, 70, 72, 67, 186, 88, 219];
 
+//this is the main function
+//function fetches data from API, gets random word from it 
+//and displays it on the screen with dashes instead of letters
 function loadGame(api) {
     fetch(api)
         .catch(function (err) {
@@ -24,6 +27,9 @@ function loadGame(api) {
         })
 
 }
+//this function checks which letter is clicked and if hidden word contains that letter
+//if so, dash/dashes will be replaced with that letter
+//if not, number of mistakes is increased by one
 function guessing(wordArray, hiddenWord) {
     let wrongGuesses = 0;
     for (let i = 0; i < lettersArray.length; i++) {
@@ -56,7 +62,7 @@ function guessing(wordArray, hiddenWord) {
 function appendCategoryName(categoryName) {
     document.querySelector("#categoryName").innerHTML = `<p>${categoryName}</p>`;
 }
-
+//this function is called in two cases, when user gets out of tries, or when hidden word is guessed
 function endOfGame(wordArray) {
     document.querySelector("#game").innerHTML = "";
     appendDashes(wordArray);
@@ -68,6 +74,7 @@ function endOfGame(wordArray) {
 function newGame() {
     location.reload();
 }
+//creating virtual keyboard on the screen
 function appendButtonsWithLetters(array) {
     counter = 0;
     array.forEach(item => {
@@ -81,6 +88,7 @@ function appendButtonsWithLetters(array) {
         counter++
     })
 }
+//creating dashes and spaces instead of letters
 function wordInDashes(word) {
     let hiddenWord = [];
     const spaces = allIndexes(word, " ");
@@ -93,6 +101,7 @@ function wordInDashes(word) {
     }
     return hiddenWord;
 }
+//gets all indexes of character in array
 function allIndexes(array, letter) {
     var indexes = [];
     for (let i = 0; i < array.length; i++) {
@@ -102,6 +111,7 @@ function allIndexes(array, letter) {
     }
     return indexes;
 }
+//appending dashes on the screen
 function appendDashes(word) {
     word.forEach(letter => {
         const pElement = document.createElement("p");
@@ -112,6 +122,7 @@ function appendDashes(word) {
 function changeDisplay(id, display) {
     document.querySelector(`#${id}`).style.display = display;
 }
+//this function allows user to guess letter by pressing keyboard, instead of clicking on the virtual keyboard
 function keyboardInput(event) {
     event.preventDefault();
     var x = event.keyCode;
@@ -124,7 +135,6 @@ function keyboardInput(event) {
     }
 
 }
-
 function playAudio(sound) {
     let audio = new Audio(`${sound}`);
     audio.play();
