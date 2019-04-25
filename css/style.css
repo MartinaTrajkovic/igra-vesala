@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
 :root {
     font-size: 16px;
 }
@@ -6,6 +8,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gloria Hallelujah', cursive;
+
 }
 
 .containerWrapper {
@@ -129,6 +133,7 @@
     height: 70%;
     border: none;
     font-size: 1.2em;
+    font-weight: bold;
 }
 
 .categoryNameContainer p {
@@ -181,9 +186,8 @@ button:focus {
         grid-template-areas: "hangman wrongLetter" "word word" "alphabet alphabet"
     }
     .alphabetContainer {
-        grid-area: alphabet;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(5, 1fr)
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, 1fr)
     }
     .containerWrapper:before {
         background-size: 100% 65%;
@@ -212,11 +216,18 @@ button:focus {
     :root {
         font-size: 7px
     }
+    .alphabetContainer {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr)
+    }
     canvas {
         max-width: 100%;
         margin-top: 5%;
     }
     .wordContainer p {
         width: 12px;
+    }
+    .alphabetContainer button {
+        height: 90%;
     }
 }
