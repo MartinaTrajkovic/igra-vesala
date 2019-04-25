@@ -10,6 +10,7 @@ function hangerDraw() {
     hanger.strokeStyle = "#f9fc64";
     hanger.stroke();
 }
+//this function draws hangman based od how many mistakes are made
 function hangmanDraw(mistakes, wordArray) {
     switch (mistakes) {
         case 1:
