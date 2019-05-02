@@ -1,17 +1,37 @@
-let canvas = document.querySelector("#hangmanCanvas")
-
 function hangerDraw() {
-    var hanger = canvas.getContext("2d");
+    const hangmanWrapper = document.querySelector("#hangmanDrawing");
+    const canvasField = document.createElement("canvas");
+    canvasField.id = "hangmanCanvas";
+    canvasField.setAttribute("width","170px");
+    canvasField.setAttribute("height","200px");
+    hangmanWrapper.appendChild(canvasField);
+    
+    const hanger = canvasField.getContext("2d");
     hanger.moveTo(10, 200);
     hanger.lineTo(10, 0);
     hanger.lineTo(100, 0);
     hanger.lineTo(100, 20);
     hanger.lineWidth = 5;
-    hanger.strokeStyle = "#f9fc64";
+    let pathToTheme = document.querySelector("#themeLink").href.split("/");
+    switch ((pathToTheme[pathToTheme.length - 1]).split(".")[0]) {
+        case "pink":
+            hanger.strokeStyle = "#a07593";
+            break;
+        case "blue":
+            hanger.strokeStyle = "#003264";
+            break;
+        case "orange":
+            hanger.strokeStyle = "#666";
+            break;
+            case "rose":
+            hanger.strokeStyle = "#7c5959";
+    }
     hanger.stroke();
+
 }
 //this function draws hangman based od how many mistakes are made
 function hangmanDraw(mistakes, wordArray) {
+    const canvas = document.querySelector("#hangmanCanvas");
     switch (mistakes) {
         case 1:
             let head = canvas.getContext("2d");
