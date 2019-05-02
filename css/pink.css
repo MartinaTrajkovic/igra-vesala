@@ -1,0 +1,43 @@
+.containerWrapper {
+    background-image: url("../media/img/bgPink.svg");
+    background-size: cover;
+}
+.gameContainer {
+    box-shadow: 5px 5px 15px #a07593;
+    background-color: rgb(255,255,255,0.8)
+}
+.themeBox{
+box-shadow: 0px 0px 15px 2px #a07593;
+
+}
+.explanation {
+   color: #ff87b3;
+}
+
+.wordContainer p {
+    color: #a07593;
+}
+.categoryNameContainer p {
+    color: white;
+    background-color: #ff87b3;
+
+}
+.buttons {
+    background-color: #ff87b3;
+    box-shadow: 5px 5px 10px #a07593;
+    color: white;
+}
+.buttons:hover{
+    background-color: #ff4388;
+}
+.alphabetContainer button{
+    color: #ff87b3;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px #a07593
+
+}
+.alphabetContainer button:disabled{
+    background-color: #ff87b3;
+    color: white;
+}
+

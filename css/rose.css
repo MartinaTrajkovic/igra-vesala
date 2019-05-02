@@ -1,0 +1,43 @@
+.containerWrapper {
+    background-image: url("../media/img/bgRose.svg");
+    background-size: cover;
+}
+.gameContainer {
+    box-shadow: 5px 5px 15px #775757;
+    background-color: rgb(255,255,255,0.8)
+}
+.themeBox{
+box-shadow: 0px 0px 15px 2px #baa6a6;
+
+}
+.explanation {
+   color: #d8a0a0;
+}
+
+.wordContainer p {
+    color: #7c5959;
+}
+.categoryNameContainer p {
+    color: white;
+    background-color: #d8a0a0;
+
+}
+.buttons {
+    background-color: #d8a0a0;
+    box-shadow: 5px 5px 10px #baa6a6;
+    color: white;
+}
+.buttons:hover{
+    background-color: #c09595;
+}
+.alphabetContainer button{
+    color: #d8a0a0;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px #baa6a6
+
+}
+.alphabetContainer button:disabled{
+    background-color: #d8a0a0;
+    color: white;
+}
+
