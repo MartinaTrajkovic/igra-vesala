@@ -20,9 +20,9 @@ chooseThemeButton.addEventListener("click", function(){
     changeDisplay("categories", "grid");
 });
 
-if(localStorage.getItem("theme")){
-    document.querySelector("#themeLink").href = localStorage.getItem("theme");
-}
+// if(localStorage.getItem("theme")){
+//     document.querySelector("#themeLink").href = localStorage.getItem("theme");
+// }
 
 
 
