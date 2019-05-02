@@ -147,6 +147,5 @@ function playAudio(sound) {
     let audio = new Audio(`${sound}`);
     audio.play();
     audio.volume = 0.3;
-    console.log(audio.src)
 }
 document.querySelector("#newGame").addEventListener("click", startNewGame);
