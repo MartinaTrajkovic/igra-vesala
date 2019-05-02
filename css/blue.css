@@ -1,0 +1,43 @@
+.containerWrapper {
+    background-image: url("../media/img/bgBlue.svg");
+    background-size: cover;
+}
+.gameContainer {
+    box-shadow: 5px 5px 15px #37435b;
+    background-color:rgb(184, 237, 255,0.8)
+}
+.themeBox{
+    box-shadow: 0px 0px 15px 2px #37435b
+}
+.explanation {
+   color: #003264;
+}
+
+.wordContainer p {
+    color: #003264;
+}
+.categoryNameContainer p {
+    color: white;
+    background-color: #003264;
+
+}
+.buttons {
+    background-color: #003264;
+    box-shadow: 5px 5px 10px #37435b;
+    color: white;
+}
+.buttons:hover{
+    background-color: #004b95;
+}
+.alphabetContainer button{
+    color: #003264;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px #37435b
+
+}
+.alphabetContainer button:disabled{
+    background-color: #003264;
+    color: white;
+}
+
+
