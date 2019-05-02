@@ -6,41 +6,61 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Comic Sans MS", cursive, sans-serif
+    font-family: "Comic Sans MS", sans-serif;
+    user-select: none;
 }
 
 .containerWrapper {
     height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 10fr 3fr;
-    background-image: url("../media/img/bg.jpg");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-size: 100% 100%;
 }
 
-.containerWrapper:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    background-image: url("../media/img/rainbow.png");
-    background-repeat: no-repeat;
-    background-size: 65% 100%;
-    background-position-x: 100%;
-}
 
 .gameContainer {
     width: 80%;
     height: 90%;
     border-radius: 10px;
     z-index: 1;
-    box-shadow: 10px 15px 20px #518157;
-    background-color: rgb(217, 247, 243, 0.4)
+
+}
+.themesContainer{
+    height: 100%;
+    grid-template-rows: 8fr 2fr;
+}
+.themeBoxes{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr)
+}
+.themeBox{
+    width: 50%;
+    height: 30%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s linear
+}
+.themeBox:hover{
+    height: 40%;
+    width: 60%;
+    transition: all 0.3s linear;
+    filter: brightness(80%);
+
 }
 
+.size{
+    width: 60%;
+}
+.openCategoryWindow{
+    height: 50%;
+    width: 40%;
+    font-size: 1.5em;
+}
 .allCategories {
+    display: none;
+    justify-items: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     grid-template-columns: repeat(2, 1fr);
@@ -50,15 +70,8 @@
 
 .explanation {
     grid-column: span 2;
-    color: wheat;
     font-size: 2em;
-    background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #FFBCFF 57%, #00FF84 100%);
     font-weight: bold;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -ms-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
 }
 
 .category {
@@ -75,7 +88,7 @@
 
 .startNewGame {
     display: none;
-    height: 60%;
+    height: 40%;
     width: 20%;
     justify-content: center;
     align-items: center;
@@ -114,9 +127,7 @@
     white-space: pre;
     font-size: 1.7em;
     text-align: center;
-    color: #02633d;
     font-weight: bold;
-    text-shadow: 1px 1px 2px #f9fc64;
 }
 
 .alphabetContainer {
@@ -128,25 +139,25 @@
 .alphabetContainer button {
     width: 70%;
     height: 70%;
-    border: none;
     font-size: 1.2em;
     font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .categoryNameContainer p {
     font-size: 2em;
     text-align: center;
-    background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #FFBCFF 57%, #00FF84 100%);
     font-weight: bold;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -ms-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    padding: 0% 6%;
+    border-radius: 10px
 }
 
 button:focus {
     outline: none
+}
+button{
+    border: none;
 }
 
 .flex-center {
@@ -164,9 +175,6 @@ button:focus {
 .buttons {
     cursor: pointer;
     border-radius: 10px;
-    background-color: #f9fc64;
-    box-shadow: 5px 5px 10px rgb(40, 120, 83);
-    color: #008250;
     transition: background-color 0.3s linear;
 }
 
@@ -186,10 +194,6 @@ button:focus {
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: repeat(3, 1fr)
     }
-    .containerWrapper:before {
-        background-size: 100% 65%;
-        background-position-y: 100%;
-    }
     .category {
         width: 75%;
     }
@@ -208,7 +212,6 @@ button:focus {
         max-height: 100%;
     }
 }
-
 @media screen and (max-width:300px) {
     :root {
         font-size: 7px
