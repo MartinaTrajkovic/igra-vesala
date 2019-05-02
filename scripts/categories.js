@@ -18,8 +18,6 @@ apiList.forEach(apiItem => {
 
 const categories = document.querySelectorAll(".category");
 categories.forEach(category => category.addEventListener("click", openGameWindow));
-categories.forEach(category => category.addEventListener("mouseenter", getRandomColor));
-categories.forEach(category => category.addEventListener("mouseleave", resetColor));
 
 //this function checks which category is clicked
 // and calls loadgame() function with specific parametar from apiList variable
