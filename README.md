@@ -2,7 +2,7 @@ Abstract
 
 My project was implementation of Hangman game using HTML5 technology with the help of Javascript and CSS. No external libraries are used.
 
-Choosing them
+Choosing theme
 
 When you open the game you can choose theme for your game. There are four of them. By clicking on any of them chooseTheme() function triggers.This function loads CSS file, based on clicked theme and choosen theme is saved in local storage. After that user needs to click on the button underneath themes container. That click triggers function which changes display of current window to none, and shows category window.
 
