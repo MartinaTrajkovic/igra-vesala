@@ -120,6 +120,7 @@
 
 .wordContainer {
     grid-area: word;
+    height:100%;
 }
 
 .wordContainer p {
