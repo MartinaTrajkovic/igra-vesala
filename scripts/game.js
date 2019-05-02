@@ -24,9 +24,9 @@ function loadGame(api) {
             changeDisplay("gameContainer", "grid");
             guessing(lettersOfGuessingWord, hiddenWord);
             document.querySelector("body").addEventListener("keyup", keyboardInput);
-        })
-
+        });
 }
+
 //this function checks which letter is clicked and if hidden word contains that letter
 //if so, dash/dashes will be replaced with that letter
 //if not, number of mistakes is increased by one
@@ -36,9 +36,7 @@ function guessing(wordArray, hiddenWord) {
         document.querySelector(`#letter${i}`).addEventListener("click", function () {
             const clickedLetter = this.innerText;
             this.disabled = true;
-            this.style.backgroundColor = "rgb(40, 173, 57)";
-            this.style.color = "rgb(249, 252, 100)"
-            this.style.cursor = "auto"
+            this.style.cursor = "auto";
             const indexesOfLetter = allIndexes(wordArray, clickedLetter);
             if (indexesOfLetter.length === 0) {
                 wrongGuesses++;
@@ -50,18 +48,20 @@ function guessing(wordArray, hiddenWord) {
                     hiddenWord.splice(index, 1, this.innerHTML);
                     appendDashes(hiddenWord);
 
-                })
+                });
                 if (hiddenWord.join("") == wordArray.join("")) {
                     playAudio("media/audio/bravo.mp3");
                     endOfGame(wordArray);
                 }
             }
-        })
+        });
     }
 }
+
 function appendCategoryName(categoryName) {
     document.querySelector("#categoryName").innerHTML = `<p>${categoryName}</p>`;
 }
+
 //this function is called in two cases, when user gets out of tries, or when hidden word is guessed
 function endOfGame(wordArray) {
     document.querySelector("#game").innerHTML = "";
@@ -69,25 +69,32 @@ function endOfGame(wordArray) {
     document.querySelector("#alphabet").style.pointerEvents = "none";
     changeDisplay("newGame", "flex");
     document.querySelector("body").removeEventListener("keyup", keyboardInput);
+}
 
+function startNewGame() {
+    categories.forEach(category => category.addEventListener("click", openGameWindow));
+    changeDisplay("newGame", "none");
+    changeDisplay("categories", "grid");
+    changeDisplay("gameContainer", "none");
+    document.querySelector("#hangmanDrawing").innerHTML = "";
+    document.querySelector("#alphabet").innerHTML = "";
+    document.querySelector("#categoryName").innerHTML = "";
+    document.querySelector("#game").innerHTML = "";
+    document.querySelector("#alphabet").style.pointerEvents = "auto";
 }
-function newGame() {
-    location.reload();
-}
+
 //creating virtual keyboard on the screen
 function appendButtonsWithLetters(array) {
     counter = 0;
     array.forEach(item => {
         const letter = document.createElement("button");
-        letter.classList.add("buttons");
-        letter.addEventListener("mouseenter", getRandomColor);
-        letter.addEventListener("mouseleave", resetColor);
         letter.innerText = item;
         letter.id = `letter${counter}`;
         document.querySelector("#alphabet").appendChild(letter);
-        counter++
-    })
+        counter++;
+    });
 }
+
 //creating dashes and spaces instead of letters
 function wordInDashes(word) {
     let hiddenWord = [];
@@ -101,6 +108,7 @@ function wordInDashes(word) {
     }
     return hiddenWord;
 }
+
 //gets all indexes of character in array
 function allIndexes(array, letter) {
     var indexes = [];
@@ -117,7 +125,7 @@ function appendDashes(word) {
         const pElement = document.createElement("p");
         pElement.innerText = letter;
         document.querySelector("#game").appendChild(pElement);
-    })
+    });
 }
 function changeDisplay(id, display) {
     document.querySelector(`#${id}`).style.display = display;
@@ -133,11 +141,11 @@ function keyboardInput(event) {
                 break;
         }
     }
-
 }
+
 function playAudio(sound) {
     let audio = new Audio(`${sound}`);
     audio.play();
     audio.volume = 0.3;
 }
-document.querySelector("#newGame").addEventListener("click", newGame);
+document.querySelector("#newGame").addEventListener("click", startNewGame);
