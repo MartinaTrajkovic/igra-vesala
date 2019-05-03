@@ -6,7 +6,6 @@ const apiList = [
     { name: "animals", category: "ЖИВОТИЊЕ", api: "https://api.jsonbin.io/b/5cbf6f731f6d9a5478d0130c" },
     { name: "countries", category: "ДРЖАВЕ", api: "https://api.jsonbin.io/b/5c97bfd7c13b773c081d406c" }
 ];
-
 //creating category boxes on the first page
 apiList.forEach(apiItem => {
     let categoryContainer = document.createElement("div");
@@ -15,10 +14,8 @@ apiList.forEach(apiItem => {
     categoryContainer.innerText = `${apiItem.category}`;
     document.querySelector("#categories").appendChild(categoryContainer);
 });
-
 const categories = document.querySelectorAll(".category");
 categories.forEach(category => category.addEventListener("click", openGameWindow));
-
 //this function checks which category is clicked
 // and calls loadgame() function with specific parametar from apiList variable
 function openGameWindow() {
