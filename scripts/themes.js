@@ -17,6 +17,7 @@ function chooseTheme(){
 chooseThemeButton.addEventListener("click", function(){
     changeDisplay("themes","none");
     changeDisplay("categories", "grid");
+    changeDisplay("chooseThemeAgain","flex")
 });
 
 if(localStorage.getItem("theme")){
