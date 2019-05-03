@@ -1,6 +1,5 @@
 const lettersArray = ["А", "Б", "В", "Г", "Д", "Ђ", "Е", "Ж", "З", "И", "Ј", "К", "Л", "Љ", "М", "Н", "Њ", "О", "П", "Р", "С", "Т", "Ћ", "У", "Ф", "Х", "Ц", "Ч", "Џ", "Ш",];
 const lettersUnicode = [65, 66, 86, 71, 68, 221, 69, 220, 90, 73, 74, 75, 76, 81, 77, 78, 87, 79, 80, 82, 83, 84, 222, 85, 70, 72, 67, 186, 88, 219];
-
 //this is the main function
 //function fetches data from API, gets random word from it 
 //and displays it on the screen with dashes instead of letters
@@ -27,7 +26,6 @@ function loadGame(api) {
             document.querySelector("body").addEventListener("keyup", keyboardInput);
         });
 }
-
 //this function checks which letter is clicked and if hidden word contains that letter
 //if so, dash/dashes will be replaced with that letter
 //if not, number of mistakes is increased by one
@@ -48,7 +46,6 @@ function guessing(wordArray, hiddenWord) {
                     document.querySelector("#game").innerHTML = "";
                     hiddenWord.splice(index, 1, this.innerHTML);
                     appendDashes(hiddenWord);
-
                 });
                 if (hiddenWord.join("") == wordArray.join("")) {
                     playAudio("media/audio/bravo.mp3");
@@ -58,11 +55,9 @@ function guessing(wordArray, hiddenWord) {
         });
     }
 }
-
 function appendCategoryName(categoryName) {
     document.querySelector("#categoryName").innerHTML = `<p>${categoryName}</p>`;
 }
-
 //this function is called in two cases, when user gets out of tries, or when hidden word is guessed
 function endOfGame(wordArray) {
     document.querySelector("#game").innerHTML = "";
@@ -71,7 +66,6 @@ function endOfGame(wordArray) {
     changeDisplay("newGame", "flex");
     document.querySelector("body").removeEventListener("keyup", keyboardInput);
 }
-
 function startNewGame() {
     categories.forEach(category => category.addEventListener("click", openGameWindow));
     changeDisplay("newGame", "none");
@@ -84,7 +78,6 @@ function startNewGame() {
     document.querySelector("#game").innerHTML = "";
     document.querySelector("#alphabet").style.pointerEvents = "auto";
 }
-
 //creating virtual keyboard on the screen
 function appendButtonsWithLetters(array) {
     counter = 0;
@@ -110,7 +103,6 @@ function wordInDashes(word) {
     }
     return hiddenWord;
 }
-
 //gets all indexes of character in array
 function allIndexes(array, letter) {
     var indexes = [];
@@ -144,7 +136,6 @@ function keyboardInput(event) {
         }
     }
 }
-
 function playAudio(sound) {
     let audio = new Audio(`${sound}`);
     audio.play();
