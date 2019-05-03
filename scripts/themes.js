@@ -9,7 +9,7 @@ setBg("rose","bgRose");
 themeBoxes.forEach(box => box.addEventListener("click", chooseTheme));
 //this function changes CSS based on choosen theme
 function chooseTheme(){
-    let themeId = this.id;
+    const themeId = this.id;
     document.querySelector("#themeLink").href = `css/${themeId}.css`;
     localStorage.setItem("theme", `css/${themeId}.css`);
 }
