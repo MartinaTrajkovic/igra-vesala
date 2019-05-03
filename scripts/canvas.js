@@ -5,7 +5,6 @@ function hangerDraw() {
     canvasField.setAttribute("width","170px");
     canvasField.setAttribute("height","200px");
     hangmanWrapper.appendChild(canvasField);
-    
     const hanger = canvasField.getContext("2d");
     hanger.moveTo(10, 200);
     hanger.lineTo(10, 0);
