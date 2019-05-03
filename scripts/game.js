@@ -22,6 +22,7 @@ function loadGame(api) {
             appendButtonsWithLetters(lettersArray);
             changeDisplay("categories", "none");
             changeDisplay("gameContainer", "grid");
+            changeDisplay("chooseThemeAgain","none")
             guessing(lettersOfGuessingWord, hiddenWord);
             document.querySelector("body").addEventListener("keyup", keyboardInput);
         });
@@ -76,6 +77,7 @@ function startNewGame() {
     changeDisplay("newGame", "none");
     changeDisplay("categories", "grid");
     changeDisplay("gameContainer", "none");
+    changeDisplay("chooseThemeAgain","flex")
     document.querySelector("#hangmanDrawing").innerHTML = "";
     document.querySelector("#alphabet").innerHTML = "";
     document.querySelector("#categoryName").innerHTML = "";
@@ -148,4 +150,8 @@ function playAudio(sound) {
     audio.play();
     audio.volume = 0.3;
 }
+function chooseNewTheme(){
+    location.reload()
+}
+document.querySelector("#chooseThemeAgain").addEventListener("click", chooseNewTheme)
 document.querySelector("#newGame").addEventListener("click", startNewGame);
