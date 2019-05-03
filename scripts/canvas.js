@@ -27,7 +27,6 @@ function hangerDraw() {
             hanger.strokeStyle = "#7c5959";
     }
     hanger.stroke();
-
 }
 //this function draws hangman based od how many mistakes are made
 function hangmanDraw(mistakes, wordArray) {
