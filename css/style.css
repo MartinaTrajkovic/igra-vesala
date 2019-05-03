@@ -15,25 +15,25 @@
     grid-template-columns: 1fr;
     grid-template-rows: 10fr 3fr;
 }
-
-
 .gameContainer {
     width: 80%;
     height: 90%;
     border-radius: 10px;
     z-index: 1;
-
 }
+
 .themesContainer{
     height: 100%;
     grid-template-rows: 8fr 2fr;
 }
+
 .themeBoxes{
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4,1fr)
 }
+
 .themeBox{
     width: 50%;
     height: 30%;
@@ -41,6 +41,7 @@
     cursor: pointer;
     transition: all 0.3s linear
 }
+
 .themeBox:hover{
     height: 40%;
     width: 60%;
@@ -49,9 +50,6 @@
 
 }
 
-.size{
-    width: 60%;
-}
 .openCategoryWindow{
     height: 60%;
     width: 40%;
@@ -120,7 +118,6 @@
 
 .wordContainer {
     grid-area: word;
-    height:100%;
 }
 
 .wordContainer p {
@@ -183,30 +180,38 @@ button{
     :root {
         font-size: 12px
     }
+    
     .themeBoxes{
         grid-template-columns: repeat(2,1fr)
     }
+    
     .gameContainer {
         width: 90%;
     }
+    
     .hangmanContainer {
         grid-template-rows: 4fr 3fr 4fr;
         grid-template-columns: 5fr 6fr;
         grid-template-areas: "hangman wrongLetter" "word word" "alphabet alphabet"
     }
+    
     .alphabetContainer {
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: repeat(3, 1fr)
     }
+    
     .category {
         width: 75%;
     }
+    
     .wordContainer p {
         width: 18px;
     }
+    
     .alphabetContainer button {
         border-radius: 5px;
     }
+    
     .startNewGame {
         width: 75%;
     }
@@ -220,17 +225,21 @@ button{
     :root {
         font-size: 7px
     }
+    
     .alphabetContainer {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(5, 1fr)
     }
+    
     canvas {
         max-width: 100%;
         margin-top: 5%;
     }
+    
     .wordContainer p {
         width: 12px;
     }
+    
     .alphabetContainer button {
         height: 90%;
     }
