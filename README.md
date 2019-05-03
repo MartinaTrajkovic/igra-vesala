@@ -1,3 +1,5 @@
+#HANGMAN GAME
+
 Abstract
 
 My project was implementation of Hangman game using HTML5 technology with the help of Javascript and CSS. No external libraries are used.
