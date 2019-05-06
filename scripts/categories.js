@@ -8,7 +8,7 @@ const apiList = [
 ];
 //creating category boxes on the first page
 apiList.forEach(apiItem => {
-    let categoryContainer = document.createElement("div");
+    const categoryContainer = document.createElement("div");
     categoryContainer.classList.add("category","buttons", "flex-center");
     categoryContainer.id = `${apiItem.name}`;
     categoryContainer.innerText = `${apiItem.category}`;
