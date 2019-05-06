@@ -11,7 +11,7 @@ function hangerDraw() {
     hanger.lineTo(100, 0);
     hanger.lineTo(100, 20);
     hanger.lineWidth = 5;
-    let pathToTheme = document.querySelector("#themeLink").href.split("/");
+    const pathToTheme = document.querySelector("#themeLink").href.split("/");
     switch ((pathToTheme[pathToTheme.length - 1]).split(".")[0]) {
         case "pink":
             hanger.strokeStyle = "#a07593";
@@ -32,7 +32,7 @@ function hangmanDraw(mistakes, wordArray) {
     const canvas = document.querySelector("#hangmanCanvas");
     switch (mistakes) {
         case 1:
-            let head = canvas.getContext("2d");
+            const head = canvas.getContext("2d");
             head.beginPath();
             head.arc(100, 40, 20, 0, 2 * Math.PI);
             head.moveTo(110, 40);
@@ -45,43 +45,43 @@ function hangmanDraw(mistakes, wordArray) {
             head.stroke();
             break;
         case 2:
-            let body = canvas.getContext("2d");
+            const body = canvas.getContext("2d");
             body.moveTo(100, 60);
             body.lineTo(100, 120);
             body.stroke();
             break;
         case 3:
-            let leftHand = canvas.getContext("2d");
+            const leftHand = canvas.getContext("2d");
             leftHand.moveTo(100, 65);
             leftHand.lineTo(70, 85);
             leftHand.stroke();
             break;
         case 4:
-            let rightHand = canvas.getContext("2d");
+            const rightHand = canvas.getContext("2d");
             rightHand.moveTo(100, 65);
             rightHand.lineTo(130, 85);
             rightHand.stroke();
             break;
         case 5:
-            let leftLeg = canvas.getContext("2d");
+            const leftLeg = canvas.getContext("2d");
             leftLeg.moveTo(100, 120);
             leftLeg.lineTo(70, 150);
             leftLeg.stroke();
             break;
         case 6:
-            let rightLeg = canvas.getContext("2d");
+            const rightLeg = canvas.getContext("2d");
             rightLeg.moveTo(100, 120);
             rightLeg.lineTo(130, 150);
             rightLeg.stroke();
             break;
         case 7:
-            let leftFoot = canvas.getContext("2d");
+            const leftFoot = canvas.getContext("2d");
             leftFoot.moveTo(70, 150);
             leftFoot.lineTo(60, 140);
             leftFoot.stroke();
             break;
         case 8:
-            let rightFoot = canvas.getContext("2d");
+            const rightFoot = canvas.getContext("2d");
             rightFoot.moveTo(130, 150);
             rightFoot.lineTo(140, 140);
             rightFoot.stroke();
