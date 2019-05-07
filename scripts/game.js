@@ -1,8 +1,10 @@
 const lettersArray = ["А", "Б", "В", "Г", "Д", "Ђ", "Е", "Ж", "З", "И", "Ј", "К", "Л", "Љ", "М", "Н", "Њ", "О", "П", "Р", "С", "Т", "Ћ", "У", "Ф", "Х", "Ц", "Ч", "Џ", "Ш",];
 const lettersUnicode = [65, 66, 86, 71, 68, 221, 69, 220, 90, 73, 74, 75, 76, 81, 77, 78, 87, 79, 80, 82, 83, 84, 222, 85, 70, 72, 67, 186, 88, 219];
-//this is the main function
-//function fetches data from API, gets random word from it 
-//and displays it on the screen with dashes instead of letters
+/*
+this is the main function
+function fetches data from API, gets random word from it 
+and displays it on the screen with dashes instead of letters
+*/
 function loadGame(api) {
     fetch(api)
         .catch(function (err) {
@@ -26,9 +28,11 @@ function loadGame(api) {
             document.querySelector("body").addEventListener("keyup", keyboardInput);
         });
 }
-//this function checks which letter is clicked and if hidden word contains that letter
-//if so, dash/dashes will be replaced with that letter
-//if not, number of mistakes is increased by one
+/*
+this function checks which letter is clicked and if hidden word contains that letter
+if so, dash/dashes will be replaced with that letter
+if not, number of mistakes is increased by one
+*/
 function guessing(wordArray, hiddenWord) {
     let wrongGuesses = 0;
     for (let i = 0; i < lettersArray.length; i++) {
