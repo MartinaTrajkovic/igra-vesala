@@ -16,8 +16,10 @@ apiList.forEach(apiItem => {
 });
 const categories = document.querySelectorAll(".category");
 categories.forEach(category => category.addEventListener("click", openGameWindow));
-//this function checks which category is clicked
-// and calls loadgame() function with specific parametar from apiList variable
+/*
+this function checks which category is clicked
+and calls loadgame() function with specific parametar from apiList variable
+*/
 function openGameWindow() {
     categories.forEach(category => category.removeEventListener("click", openGameWindow));
     const category = this.id;
